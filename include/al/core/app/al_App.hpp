@@ -69,7 +69,8 @@ public:
     }
 
     virtual void preOnAnimate(double dt) {
-        mNav.step();
+        mNav.smooth(::pow(0.0001, dt));
+        mNav.step(dt * fps());
     }
 
     virtual void preOnDraw() {

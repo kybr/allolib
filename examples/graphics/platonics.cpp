@@ -83,17 +83,14 @@ public:
 		float angPos = 2*M_PI/5;
 		float R = 3;
 
+		g.meshColor();
+
 		for(int i=0; i<5; ++i){
 			g.pushMatrix();
 				g.translate(R*cos(i*angPos), R*sin(i*angPos), 0);
 				g.rotate(angle1, 0,1,0);
 				g.rotate(angle2, 1,0,0);
-				g.color(0.5, 0.5, 0.5);
 				g.polygonMode(Graphics::FILL);
-				g.draw(solids[i]);
-				g.scale(1.01);
-				g.color(0);
-				g.polygonMode(Graphics::LINE);
 				g.draw(solids[i]);
 			g.popMatrix();
 		}
